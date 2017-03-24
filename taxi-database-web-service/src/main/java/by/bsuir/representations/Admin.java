@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "ADMIN")
 public class Admin extends BaseUser {
 
-	@ManyToOne(targetEntity=AdminRights.class,fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@ManyToOne(targetEntity = AdminRights.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "admin_rights_id")
 	@NotNull
 	private Long adminRightsId;
@@ -28,7 +28,5 @@ public class Admin extends BaseUser {
 	public void setAdminRightsId(Long adminRightsId) {
 		this.adminRightsId = adminRightsId;
 	}
-	
-	
 
 }
