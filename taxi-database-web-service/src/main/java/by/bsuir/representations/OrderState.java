@@ -1,10 +1,14 @@
 package by.bsuir.representations;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,7 +23,11 @@ public class OrderState {
 	@NotNull
     @Column(name = "state")
 	private String state;
-
+	
+	@OneToMany
+	@JoinColumn(name = "order_state_id")
+	private Set<Order> orders;
+	
 	public OrderState() {
 		super();
 	}
@@ -39,6 +47,15 @@ public class OrderState {
 	public void setState(String state) {
 		this.state = state;
 	}
+
+	public Set<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
+	}
+	
 	
 	
 }

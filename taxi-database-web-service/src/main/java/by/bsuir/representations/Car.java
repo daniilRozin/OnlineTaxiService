@@ -43,6 +43,11 @@ public class Car {
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "car_id")
 	private Set<Driver> drivers;
+	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "car_id")
+	private Set<Order> orders;
+	
 
 	public Car() {
 		super();
@@ -94,6 +99,14 @@ public class Car {
 
 	public void setDrivers(Set<Driver> drivers) {
 		this.drivers = drivers;
+	}
+
+	public Set<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
 	}
 	
 	
