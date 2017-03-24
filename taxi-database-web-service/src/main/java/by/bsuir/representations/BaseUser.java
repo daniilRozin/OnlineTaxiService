@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class BaseUser {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
 	
 	@NotNull
@@ -61,6 +61,10 @@ public class BaseUser {
 		return password;
 	}
 
+	/*
+	 * TO-DO
+	 * Add encryption here
+	 */
 	@NotNull
     @Column(name = "password")
 	public void setPassword(String password) {

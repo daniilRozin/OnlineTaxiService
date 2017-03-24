@@ -2,6 +2,7 @@ package by.bsuir.representations;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,11 +41,11 @@ public class Car {
 	@NotNull
 	private Boolean babyChair;
 
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "car_id")
 	private Set<Driver> drivers;
 	
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
 	@JoinColumn(name = "car_id")
 	private Set<Order> orders;
 	

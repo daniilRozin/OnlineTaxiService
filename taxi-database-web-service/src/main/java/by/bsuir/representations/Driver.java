@@ -1,7 +1,9 @@
 package by.bsuir.representations;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -21,7 +23,7 @@ public class Driver extends BaseUser {
 	@Column (name = "telephone")
 	private String telephone;
 	
-	@ManyToOne
+	@ManyToOne(targetEntity=Car.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@NotNull
 	@JoinColumn(name="car_id")
 	private Long carId;
