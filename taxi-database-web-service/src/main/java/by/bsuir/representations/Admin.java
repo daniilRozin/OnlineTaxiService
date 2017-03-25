@@ -15,18 +15,18 @@ public class Admin extends BaseUser {
 	@ManyToOne(targetEntity = AdminRights.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "admin_rights_id")
 	@NotNull
-	private Long adminRightsId;
+	private AdminRights adminRights;
 
 	public Admin() {
 		super();
 	}
 
-	public Long getAdminRightsId() {
-		return adminRightsId;
+	public AdminRights getAdminRights() {
+		return adminRights;
 	}
 
-	public void setAdminRightsId(Long adminRightsId) {
-		this.adminRightsId = adminRightsId;
+	public void setAdminRights(AdminRights adminRights) {
+		this.adminRights = adminRights;
 	}
 
 }

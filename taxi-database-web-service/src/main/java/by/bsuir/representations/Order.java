@@ -32,28 +32,28 @@ public class Order {
 	@NotNull
 	@ManyToOne(targetEntity=Client.class, fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="client_id")
-	private Long clientId;
+	private Client client;
 
 	@NotNull
 	@ManyToOne(targetEntity=Car.class, fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn (name = "car_id")
-	private Long carId;
+	private Car car;
 	
 	
 	@NotNull
 	@ManyToOne(targetEntity=Adress.class, fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn (name = "from_adress")
-	private Long fromAdress;
+	private Adress fromAdress;
 	
 	@NotNull
 	@ManyToOne(targetEntity=Adress.class, fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn (name = "to_adress")
-	private Long toAdress;
+	private Adress toAdress;
 	
 	@NotNull
 	@ManyToOne(targetEntity=OrderState.class, fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="order_state_id")
-	private Long orderStateId;
+	private OrderState orderStateId;
 
 	
 	
@@ -61,49 +61,61 @@ public class Order {
 		super();
 	}
 
-	public Long getCarId() {
-		return carId;
+
+	public Client getClient() {
+		return client;
 	}
 
-	public void setCarId(Long carId) {
-		this.carId = carId;
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
-	public Long getClientId() {
-		return clientId;
+
+	public Car getCar() {
+		return car;
 	}
 
-	public void setClientId(Long clientId) {
-		this.clientId = clientId;
+
+	public void setCar(Car car) {
+		this.car = car;
 	}
 
-	public Long getFromAdress() {
+
+	public Adress getFromAdress() {
 		return fromAdress;
 	}
 
-	public void setFromAdress(Long fromAdress) {
+
+	public void setFromAdress(Adress fromAdress) {
 		this.fromAdress = fromAdress;
 	}
 
-	public Long getToAdress() {
+
+	public Adress getToAdress() {
 		return toAdress;
 	}
 
-	public void setToAdress(Long toAdress) {
+
+	public void setToAdress(Adress toAdress) {
 		this.toAdress = toAdress;
 	}
 
-	public Long getOrderStateId() {
+
+	public OrderState getOrderStateId() {
 		return orderStateId;
 	}
 
-	public void setOrderStateId(Long orderStateId) {
+
+	public void setOrderStateId(OrderState orderStateId) {
 		this.orderStateId = orderStateId;
 	}
+
 
 	public Long getId() {
 		return id;
 	}
+	
 
 	public void setId(Long id) {
 		this.id = id;
