@@ -1,4 +1,4 @@
-package by.bsuir.representations;
+package by.bsuir_matys_rozin_zarudny.representations;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
